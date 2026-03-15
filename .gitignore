@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Models (too large for GitHub)
+models/
+
+# Data (too large for GitHub)
+data/
+
+# Node
+node_modules/
+dashboard/node_modules/
+dashboard/build/
+
+# Environment
+.env
+*.pkl
