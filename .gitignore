@@ -3,13 +3,12 @@ venv/
 __pycache__/
 *.pyc
 
-# Models (too large for GitHub)
-#models/
+# Models (ignore only large training arrays)
 models/X_train.npy
 models/y_train.npy
 
-# Data (too large for GitHub)
-#sdata/
+# Data (if needed)
+# data/
 
 # Node
 node_modules/
@@ -18,5 +17,4 @@ dashboard/build/
 
 # Environment
 .env
-*.pkl
-
+desktop.ini
