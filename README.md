@@ -16,6 +16,7 @@ The system helps retailers minimize **overstocking and stockouts** by generating
 1. Dimple Sachanandani
 2. Niyati Yele
 3. Pranav Dighole
+
 Branch:- Electronics & Computer Science
 
 ## Objectives
@@ -238,15 +239,6 @@ the system provides:
 ✔ Data-driven decision support
 
 Overall, it shows strong potential for **real-world retail applications**, enabling smarter inventory planning and operational efficiency.
-
----
-
-## Author
-
-Dimple Sachanandani
-Niyati Yele
-Pranav Dighole
-B.Tech Electronics & Computer Science
 
 ---
 
