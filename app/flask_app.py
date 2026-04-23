@@ -18,7 +18,7 @@ CORS(app)
 # ─── DATABASE ─────────────────────────────────────────────────
 DB_PASSWORD = "dds2005$"   # ← change if different
 DB_URL      = f"mysql+pymysql://root:{DB_PASSWORD}@localhost/smart_inventory"
-#engine      = create_engine(DB_URL)
+engine      = create_engine(DB_URL)
 MODEL_DIR   = "./models"
 DATA_PATH   = "./data/retail_store_inventory.csv"
 
