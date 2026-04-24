@@ -5,7 +5,7 @@ import {
   ResponsiveContainer, Legend
 } from "recharts";
 
-const API = "http://127.0.0.1:5000/api";
+const API = "https://web-production-c4295.up.railway.app/api";
 
 const C = {
   bg:      "#0b0f1a",
