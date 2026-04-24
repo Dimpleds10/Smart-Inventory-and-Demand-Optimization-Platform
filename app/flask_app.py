@@ -107,7 +107,7 @@ def build_single_sequence(group, units_scaler, error_scaler, seq_len=14):
 # =============================================================
 @app.route("/")
 def home():
-    return "Smart Inventory API is running 🚀"
+    return {"status": "running"}
 
 @app.route("/api/health")
 def health():
