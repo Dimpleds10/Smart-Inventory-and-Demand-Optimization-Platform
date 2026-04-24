@@ -215,7 +215,7 @@ python app/flask_app.py
 
 ## Future Scope
 
-* 🌐 Cloud deployment (AWS / Render)
+
 * 📡 Real-time data streaming
 * 🤖 Advanced models (Transformers, Attention)
 * 📱 Mobile-friendly dashboard
