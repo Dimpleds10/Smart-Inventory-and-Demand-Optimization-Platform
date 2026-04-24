@@ -1,4 +1,7 @@
-# =============================================================
+from flask import Flask
+app = Flask(__name__)
+import os
+# adjust name# =============================================================
 # flask_app.py — Flask REST API
 # AI-Driven Smart Inventory & Demand Optimization Platform
 # Residual Learning — LSTM corrects existing Demand Forecast
@@ -16,11 +19,17 @@ app = Flask(__name__)
 CORS(app)
 
 # ─── DATABASE ─────────────────────────────────────────────────
-DB_PASSWORD = "dds2005$"   # ← change if different
-DB_URL      = f"mysql+pymysql://root:{DB_PASSWORD}@localhost/smart_inventory"
-engine      = create_engine(DB_URL)
-MODEL_DIR   = "./models"
-DATA_PATH   = "./data/retail_store_inventory.csv"
+DB_PASSWORD = "dds2005$"
+DB_URL = f"mysql+pymysql://root:{DB_PASSWORD}@localhost/smart_inventory"
+try:
+    engine = create_engine(DB_URL)
+except:
+    engine = None
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.join(BASE_DIR, "..")
+MODEL_DIR = os.path.join(ROOT_DIR, "models")
+DATA_PATH = os.path.join(ROOT_DIR, "data", "retail_store_inventory.csv")
 
 # ─── MODEL CACHE ──────────────────────────────────────────────
 _cache = {}
@@ -96,6 +105,9 @@ def build_single_sequence(group, units_scaler, error_scaler, seq_len=14):
 # =============================================================
 # ROUTES
 # =============================================================
+@app.route("/")
+def home():
+    return "Smart Inventory API is running 🚀"
 
 @app.route("/api/health")
 def health():
@@ -322,7 +334,11 @@ def category_stats():
 if __name__ == "__main__":
     print("="*55)
     print("  Smart Inventory API Starting...")
-    print("  Running at: http://127.0.0.1:5000")
-    print("  Test:       http://127.0.0.1:5000/api/health")
+    print("  Running on Railway...")
     print("="*55)
-    app.run(debug=True, host="0.0.0.0", port=5000)
+
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+
+    # THIS LINE IS CRITICAL FOR GUNICORN
+application = app
